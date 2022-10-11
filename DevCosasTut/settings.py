@@ -136,22 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 
-# Django REST Framework
-
-'''En DEFAULT_RENDERER_CLASSES definimos el tipo de respuesta que daremos al usuario, nosotros devolveremos un Json y 
-se pueden añadir más tipos al listado. 
-
-Con DEFAULT_AUTHENTICATION_CLASSES definimos el tipo de autenticación, nosotros utilizaremos la autenticación por Token.
-
-Por último seleccionaremos el paginador y el número máximo de resultados por página que en nuestro caso será de 10.
-'''
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10,
-}
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000/users/signup']

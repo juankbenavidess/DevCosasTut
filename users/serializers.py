@@ -74,8 +74,8 @@ class UserSignupSerializer(serializers.Serializer):
 
     phone = serializers.CharField(validators=[phone_regex, ], required=False)
 
-    password = serializers.CharField(min_length=4, max_length=64)
-    password_confirmation = serializers.CharField(min_length=4, max_length=64)
+    password = serializers.CharField(min_length=2, max_length=64)
+    password_confirmation = serializers.CharField(min_length=8, max_length=64)
     first_name = serializers.CharField(min_length=2, max_length=50)
     last_name = serializers.CharField(min_length=2, max_length=100)
 

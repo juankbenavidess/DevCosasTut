@@ -14,9 +14,9 @@ class UserViewSet(viewsets.GenericViewSet):
     queryset = User.objects.filter(is_active=True)
     serializer_class = UserModelSerializer
 
-    # Detail define si es una petición de detalle o no, en methods se añade
+    # Detail define si es una peticion de detalle o no, en methods se añade
     # el método permitido, es decir POST ó PUT ó DELETE
-    # action para modificar el compo rtamiento del enrutamiento
+    # action para modificar el comportamiento del enrutamiento
     # detail para especificar si el detalle del modelo
     @action(detail=False, methods=['post'])
     def login(self, request):
@@ -30,7 +30,7 @@ class UserViewSet(viewsets.GenericViewSet):
         }
         return Response(data, status=status.HTTP_201_CREATED)
 
-    @action(detail=False, methods=['post'])
+    @action(detail='False', methods=['post'])
     def signup(self, request):
         """User sign up"""
         serializer = UserSignupSerializer(data=request.data)
